@@ -19,7 +19,7 @@ class CookiesHelper:
     __password = ''
     __captcha_id = ''
     __captcha_solution = ''
-    __is_captcha_exist = False
+    __is_captcha_exist = True
 
     def __get_captcha(self):
 
@@ -31,7 +31,7 @@ class CookiesHelper:
 
         # 如果没有验证码，更新标志位状态并退出函数
         if len(captcha) == 0:
-            self.__is_captcha_exist = True
+            self.__is_captcha_exist = False
             return
 
         captcha_url = captcha[0]['src']
