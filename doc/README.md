@@ -1,4 +1,1 @@
-由于一般的大型网站都有相应的反爬虫机制。模拟登录后，获取cookies授权，能减少一些初级的限制。
-如何抓取到尽可能多的目标数据？访问的URL模式为：https://movie.douban.com/subject/26683290/ 。由于反爬虫的设计，其中的id不是连续的。
-- 分析id的分布规律，提高命中概率
-- 通过推荐和搜索入口，作为种子，实现启发式抓取
+## [详情请查看wiki](https://github.com/panxl6/douban_movie/wiki)
