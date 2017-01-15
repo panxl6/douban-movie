@@ -62,6 +62,8 @@
 - 默认为csv方式存储，存储路径为程序当前路径
 - 默认遍历方式为id遍历
 
+[演示](https://github.com/panxl6/douban_movie/blob/master/running.png)
+
 # 数据库设计
 很明显，项目中的数据库设计是不符合数据库范式的。为了上手容易，一切从简。
 
