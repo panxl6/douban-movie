@@ -21,6 +21,10 @@ class CookiesHelper:
     __captcha_solution = ''
     __is_captcha_exist = True
 
+    def __init__(self, username, password):
+        self.__user_name = username
+        self.__password = password
+
     def __get_captcha(self):
 
         # 获取验证码图片的url
@@ -49,11 +53,12 @@ class CookiesHelper:
 
     def __get_user_input(self):
 
-        print('请输入注册邮箱：')
-        self.__user_name = input()
+        if self.__user_name is None or self.__password is None:
+            print('请输入注册邮箱：')
+            self.__user_name = input()
 
-        print('请输入密码：')
-        self.__password = input()
+            print('请输入密码：')
+            self.__password = input()
 
         if self.__is_captcha_exist:
             print('请输入图中的验证码:')
@@ -72,7 +77,9 @@ class CookiesHelper:
         data['captcha-solution'] = self.__captcha_solution
 
         session = requests.Session()
-        session.post(constants.DOUBAN_MOVIE_LOGIN_URL,
-                     data=data)
+        session.post(
+            constants.DOUBAN_MOVIE_LOGIN_URL,
+            data=data
+        )
 
         return session.cookies.get_dict()
