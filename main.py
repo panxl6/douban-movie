@@ -21,6 +21,7 @@ cookie_helper = CookiesHelper.CookiesHelper(
     config['douban']['password']
 )
 cookies = cookie_helper.get_cookies()
+print(cookies)
 
 # 实例化爬虫类和数据库连接工具类
 movie_parser = MovieParser.MovieParser()
@@ -33,10 +34,12 @@ END_ID = int(config['common']['end_id'])
 # 通过ID进行遍历
 for i in range(START_ID, END_ID):
 
+    headers = {'User-Agent': random.choice(constants.USER_AGENT)}
+
     # 获取豆瓣页面(API)数据
     r = requests.get(
         constants.URL_PREFIX + str(i),
-        headers=random.choice(constants.USER_AGENT),
+        headers=headers,
         cookies=cookies
     )
     r.encoding = 'utf-8'
