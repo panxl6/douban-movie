@@ -10,6 +10,8 @@ from page_parser import Entity
 class MovieParser:
     """
     负责从html文档中解析视频实体信息
+
+    当然了，你也可以使用Xpath表达式来提取。这里只是为了方便。
     """
     __soup = ''
     __movie = None
