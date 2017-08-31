@@ -36,7 +36,7 @@ for i in range(START_ID, END_ID):
     # 获取豆瓣页面(API)数据
     r = requests.get(
         constants.URL_PREFIX + str(i),
-        headers=constants.USER_AGENT[random.randrange(0, constants.AGENT_SIZE)],
+        headers=random.choice(constants.USER_AGENT),
         cookies=cookies
     )
     r.encoding = 'utf-8'
