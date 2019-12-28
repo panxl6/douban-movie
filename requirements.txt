@@ -25,7 +25,7 @@ mate-tweak==16.10.5
 oauth==1.0.1
 onboard==1.3.0
 pexpect==4.2.0
-Pillow==3.3.1
+Pillow==6.2.0
 polib==1.0.7
 psutil==4.2.0
 ptyprocess==0.5.1
