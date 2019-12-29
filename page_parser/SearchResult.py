@@ -28,26 +28,28 @@ class SearchResult:
         soup = BeautifulSoup(r.text, 'html.parser')
         total = soup.find('span', {'class': 'count'}).text
 
-        if len(total) >4: self.__page_total = int(total[2:len(total)-2])
+        if len(total) > 4:
+            self.__page_total = int(total[2:len(total) - 2])
 
     def get_page_links(self):
 
-        if self.__page_total == 0: return None
+        if self.__page_total == 0:
+            return None
 
-        url = self.__result_url + str(self.__current_page*self.__page_size) \
-              + '&search_text=' + self.__keyword
+        url = self.__result_url + str(self.__current_page * self.__page_size) + '&search_text=' + self.__keyword
         r = requests.get(url)
         soup = BeautifulSoup(r.text, 'html.parser')
         soup = soup.find('div', {'class': 'grid-16-8 clearfix'})
         links = soup.find_all('a', {'class': ''})
-        result = []
-        i = 0
+
+        result, counter = [], 0
         for item in links:
-            i += 1
-            if i>self.__page_size: break
+            counter += 1
+            if counter > self.__page_size:
+                break
             result.append(str(item.get('href')))
 
-        if self.__current_page < self.__page_size*self.__page_total:
+        if self.__current_page < self.__page_size * self.__page_total:
             self.__current_page += 1
             return result
         return None
