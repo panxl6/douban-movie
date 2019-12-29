@@ -21,6 +21,7 @@ class DbHelper:
         self.__connection = pymysql.connect(
             host=config['mysql']['host'],
             user=config['mysql']['user'],
+            port=int(config['mysql']['port']),
             password=config['mysql']['password'],
             db=config['mysql']['db_name'],
             charset='utf8mb4',
