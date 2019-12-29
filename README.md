@@ -43,9 +43,9 @@
 抓取的目的性较强时，可以采用关键词抓取。
 
 # TODO:
-- [] 豆瓣的URL设计是比较符合RESTful规范的。根据豆瓣的id即可抓取其他相关的资源
-- [] 由于豆瓣的反爬虫机制，id是稀疏。可以考虑筛选一些没有内容的id以提高命中率。
-- [] 由于豆瓣限制了每个IP允许抓取的访问次数，可以使用代理IP[proxymesh](https://proxymesh.com/)来提升抓取速度
+- [ ] 豆瓣的URL设计是比较符合RESTful规范的。根据豆瓣的id即可抓取其他相关的资源
+- [ ] 由于豆瓣的反爬虫机制，id是稀疏。可以考虑筛选一些没有内容的id以提高命中率。
+- [ ] 由于豆瓣限制了每个IP允许抓取的访问次数，可以使用代理IP[proxymesh](https://proxymesh.com/)来提升抓取速度
 - [x] 更新包依赖
 
 影评：https://movie.douban.com/subject/26366465/reviews
