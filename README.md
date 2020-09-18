@@ -56,7 +56,7 @@
 - 测试用的账号密码
 - 默认为csv方式存储，存储路径为程序当前路径
 - 默认遍历方式为id遍历
-- 安装依赖：`pip3 -r requirements.txt`
+- 安装依赖：`pip3 install -r requirements.txt`
 
 ![演示](./doc/running.png)
 
